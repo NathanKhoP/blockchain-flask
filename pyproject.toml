@@ -1,0 +1,10 @@
+[project]
+name = "blockchain-flask"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "cryptography>=45.0.0",
+    "flask>=3.1.3",
+]
