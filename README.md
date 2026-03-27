@@ -142,7 +142,7 @@ uv run cli.py --base-url http://127.0.0.1:5000 new-wallet
 uv run cli.py --base-url http://127.0.0.1:5001 new-wallet
 uv run cli.py --base-url http://127.0.0.1:5002 new-wallet
 ```
-
+![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/A%20(new%20wallet).png%20.png)
 ![alt text](image.png)
 
 ### 2) Fund wallets with faucet
