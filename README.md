@@ -143,6 +143,8 @@ uv run cli.py --base-url http://127.0.0.1:5001 new-wallet
 uv run cli.py --base-url http://127.0.0.1:5002 new-wallet
 ```
 
+![alt text](image.png)
+
 ### 2) Fund wallets with faucet
 
 ```bash
@@ -150,12 +152,15 @@ uv run cli.py --base-url http://127.0.0.1:5000 faucet --address <A_ADDRESS> --am
 uv run cli.py --base-url http://127.0.0.1:5001 faucet --address <B_ADDRESS> --amount 100
 uv run cli.py --base-url http://127.0.0.1:5002 faucet --address <C_ADDRESS> --amount 100
 ```
+![alt text](image-1.png)
 
 ### 3) Mine to confirm faucet transactions
 
 ```bash
 uv run cli.py --base-url http://127.0.0.1:5000 mine --miner <A_ADDRESS>
 ```
+
+![alt text](image-2.png)
 
 ### 4) Sign and submit transactions
 
@@ -164,6 +169,7 @@ Example for A -> B (10 coins):
 ```bash
 uv run cli.py --base-url http://127.0.0.1:5000 sign --private-key <A_PRIV> --sender <A_ADDRESS> --recipient <B_ADDRESS> --amount 10
 ```
+![alt text](image-3.png)
 
 Copy the returned signature and submit:
 
