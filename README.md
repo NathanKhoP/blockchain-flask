@@ -153,6 +153,7 @@ uv run cli.py --base-url http://127.0.0.1:5001 faucet --address <B_ADDRESS> --am
 uv run cli.py --base-url http://127.0.0.1:5002 faucet --address <C_ADDRESS> --amount 100
 ```
 ![alt text](image-1.png)
+![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/B%20faucet%20amount%20100.png)
 
 ### 3) Mine to confirm faucet transactions
 
