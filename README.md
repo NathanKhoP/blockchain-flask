@@ -187,6 +187,7 @@ uv run cli.py --base-url http://127.0.0.1:5000 mine --miner <A_ADDRESS>
 uv run cli.py --base-url http://127.0.0.1:5001 get-chain
 uv run cli.py --base-url http://127.0.0.1:5002 get-chain
 ```
+![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/A%20mine%20and%20verify.png)
 
 ### 6) Resolve conflicts (if needed)
 
