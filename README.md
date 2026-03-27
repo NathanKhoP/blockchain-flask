@@ -199,6 +199,8 @@ If one node misses a broadcast, run conflict resolution:
 uv run cli.py --base-url http://127.0.0.1:5001 resolve
 uv run cli.py --base-url http://127.0.0.1:5002 resolve
 ```
+![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/B%20resolve.png)
+![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/C%20resolve.png)
 
 ## Useful CLI Commands
 
