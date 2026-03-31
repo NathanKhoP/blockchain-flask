@@ -142,8 +142,8 @@ uv run cli.py --base-url http://127.0.0.1:5000 new-wallet
 uv run cli.py --base-url http://127.0.0.1:5001 new-wallet
 uv run cli.py --base-url http://127.0.0.1:5002 new-wallet
 ```
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/A%20(new%20wallet).png%20.png)
-![alt text](image.png)
+![alt_text](assets/A%20(new%20wallet).png%20.png)
+![alt text](assets/image.png)
 
 ### 2) Fund wallets with faucet
 
@@ -152,8 +152,8 @@ uv run cli.py --base-url http://127.0.0.1:5000 faucet --address <A_ADDRESS> --am
 uv run cli.py --base-url http://127.0.0.1:5001 faucet --address <B_ADDRESS> --amount 100
 uv run cli.py --base-url http://127.0.0.1:5002 faucet --address <C_ADDRESS> --amount 100
 ```
-![alt text](image-1.png)
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/B%20faucet%20amount%20100.png)
+![alt text](assets/image-1.png)
+![alt_text](assets/B%20faucet%20amount%20100.png)
 
 ### 3) Mine to confirm faucet transactions
 
@@ -161,7 +161,7 @@ uv run cli.py --base-url http://127.0.0.1:5002 faucet --address <C_ADDRESS> --am
 uv run cli.py --base-url http://127.0.0.1:5000 mine --miner <A_ADDRESS>
 ```
 
-![alt text](image-2.png)
+![alt text](assets/image-2.png)
 
 ### 4) Sign and submit transactions
 
@@ -170,7 +170,7 @@ Example for A -> B (10 coins):
 ```bash
 uv run cli.py --base-url http://127.0.0.1:5000 sign --private-key <A_PRIV> --sender <A_ADDRESS> --recipient <B_ADDRESS> --amount 10
 ```
-![alt text](image-3.png)
+![alt text](assets/image-3.png)
 
 Copy the returned signature and submit:
 
@@ -187,9 +187,9 @@ uv run cli.py --base-url http://127.0.0.1:5000 mine --miner <A_ADDRESS>
 uv run cli.py --base-url http://127.0.0.1:5001 get-chain
 uv run cli.py --base-url http://127.0.0.1:5002 get-chain
 ```
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/A%20mine%20and%20verify.png)
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/B%20get%20chain.png)
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/C%20get%20chain.png)
+![alt_text](assets/A%20mine%20and%20verify.png)
+![alt_text](assets/B%20get%20chain.png)
+![alt_text](assets/C%20get%20chain.png)
 
 ### 6) Resolve conflicts (if needed)
 
@@ -199,8 +199,8 @@ If one node misses a broadcast, run conflict resolution:
 uv run cli.py --base-url http://127.0.0.1:5001 resolve
 uv run cli.py --base-url http://127.0.0.1:5002 resolve
 ```
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/B%20resolve.png)
-![alt_text](https://github.com/NathanKhoP/blockchain-flask/blob/main/C%20resolve.png)
+![alt_text](assets/B%20resolve.png)
+![alt_text](assets/C%20resolve.png)
 
 ## Useful CLI Commands
 
