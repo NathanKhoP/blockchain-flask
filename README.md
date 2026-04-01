@@ -120,6 +120,17 @@ PORT=5001 uv run app.py
 # Terminal C
 PORT=5002 uv run app.py
 ```
+as an alternative for macbook that cannot use PORT=5000, can use this instead:
+```bash
+# Terminal A
+PORT=5001 uv run app.py
+
+# Terminal B
+PORT=5002 uv run app.py
+
+# Terminal C
+PORT=5003 uv run app.py
+```
 
 ## Register Peers
 
