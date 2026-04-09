@@ -8,17 +8,24 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PublicKey
 
 
 class Blockchain:
+    GENESIS_TIMESTAMP = '1970-01-01 00:00:00'
+
     def __init__(self):
         self.chain = []
         self.pending_transactions = []
         self.nodes = set()
-        # genesis block
-        self.create_block(proof=1, prev_hash='0', proof_of_work='genesis', transactions=[])
+        self.create_block(
+            proof=1,
+            prev_hash='0',
+            proof_of_work='genesis',
+            transactions=[],
+            timestamp=self.GENESIS_TIMESTAMP,
+        )
 
-    def create_block(self, proof, prev_hash, proof_of_work, transactions):
+    def create_block(self, proof, prev_hash, proof_of_work, transactions, timestamp=None):
         block = {
             'id_block': len(self.chain) + 1,
-            'timestamp': str(datetime.datetime.now()),
+            'timestamp': timestamp or str(datetime.datetime.now()),
             'proof': proof,
             'prev_hash': prev_hash,
             'proof_of_work': proof_of_work,
@@ -117,6 +124,9 @@ class Blockchain:
             return False, 'Invalid digital signature'
 
         sender = transaction['sender']
+        if sender == 'SYSTEM':
+            return True, ''
+
         if self.get_balance(sender) < amount:
             return False, 'Insufficient balance'
 
@@ -234,4 +244,13 @@ class Blockchain:
         if not self.is_chain_valid():
             self.chain = old_chain
             return False
+
+        mined_txs = [
+            tx
+            for block in self.chain
+            for tx in block.get('transactions', [])
+        ]
+        self.pending_transactions = [
+            tx for tx in self.pending_transactions if tx not in mined_txs
+        ]
         return True
