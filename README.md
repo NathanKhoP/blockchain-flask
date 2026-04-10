@@ -1,4 +1,11 @@
-# Blockchain Flask (uv)
+# Blockchain Simulator - Flask
+
+| Nama | NRP |
+| - | - |
+| Nathan Kho Pancras | 5027231002 |
+| Abhirama Triadyatma Hermawan  | 5027231061 |
+| Brigitta Lucia Orina Hutabarat | 5002221162 |
+| Rizki Azis | - |
 
 ## Requirements
 
@@ -24,6 +31,27 @@ PORT=5000 uv run app.py
 ```bash
 uv run cli.py --base-url http://127.0.0.1:5000 get-chain
 ```
+
+## API Endpoints
+
+Base URL example: `http://127.0.0.1:5000`
+
+| Method | Endpoint | Description | Input |
+| - | - | - | - |
+| `GET` | `/get_chain` | Return the full blockchain and its length. | None |
+| `GET` | `/mining` | Mine pending transactions into a new block and add a mining reward. | Query: `miner` (optional, defaults to `miner_address`) |
+| `GET` | `/transactions/pending` | List all pending transactions in the mempool. | None |
+| `GET` | `/wallet/new` | Generate a new Ed25519 wallet. | None |
+| `POST` | `/transactions/sign` | Sign a transaction payload using a private key. | JSON: `private_key`, `sender`, `recipient`, `amount` |
+| `POST` | `/transactions/new` | Validate and add a signed transaction to pending transactions. | JSON: `sender`, `recipient`, `amount`, `signature`, `sender_public_key` |
+| `POST` | `/transactions/receive` | Receive a broadcast transaction from another node. | JSON: `transaction` |
+| `POST` | `/faucet` | Create a system transaction for funding an address. | JSON: `address`, `amount` (optional, default `100`) |
+| `GET` | `/is_valid` | Check whether the local blockchain is valid. | None |
+| `GET` | `/balance/<address>` | Get the current balance of one address. | Path: `address` |
+| `POST` | `/nodes/register` | Register one or more peer nodes. | JSON: `nodes` (list of node URLs) |
+| `GET` | `/nodes` | List all registered peer nodes. | None |
+| `POST` | `/blocks/receive` | Receive and validate a mined block from another node. | JSON: `block` |
+| `GET` | `/nodes/resolve` | Resolve conflicts by adopting the longest valid chain from peers. | None |
 
 ## How the Blockchain Works
 
